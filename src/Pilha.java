@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Pilha<T> {
 
     private int topo;
@@ -37,4 +39,26 @@ public class Pilha<T> {
         return null;
     }
 
+    public T peak(){
+        if(!isEmpty()){
+            return elementos[topo];
+        }
+        return null;
+    }
+
+    /*@Override
+    public String toString() {
+        return "Elementos da pilha: " + Arrays.toString(elementos);
+    }*/
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = topo; i >= 0; i--){
+            sb.append(elementos[i] + "\n");
+        }
+        sb.append("____________\n");
+        return sb.toString();
+    }
 }
